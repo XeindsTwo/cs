@@ -1,0 +1,125 @@
+.footer {
+  border-top: 2px solid rgba($white, .12);
+  border-top-style: outset;
+  background: linear-gradient(0deg, rgba(88, 101, 242, 0.05) 0%, rgba(0, 22, 255, 0.05) 100%), #050014;
+  padding: 22px 0 34px;
+  @include r($lg) {
+    padding: 26px 0;
+  }
+  @media (max-width: 700px) {
+    padding: 24px 0;
+  }
+  @media (max-width: 560px) {
+    padding: 26px 0 20px;
+  }
+
+  &__inner {
+    @include flex-align-center(50);
+    @media (max-width: 560px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 36px;
+    }
+  }
+
+  &__left {
+    @include flex-align-center(25);
+    margin: 0 auto;
+    @media (max-width: 960px) {
+      margin: 0;
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 870px) {
+      gap: 19px;
+    }
+    @include r($sm) {
+      gap: 14px;
+    }
+    @media (max-width: 560px) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    border-radius: 4px;
+    padding: 2px 3px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: color .4s, border .4s;
+    @media (max-width: 610px) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: #8d8dff;
+    }
+
+    &:focus {
+      color: #8d8dff;
+      border-color: #8d8dff;
+    }
+  }
+
+  &__copy {
+    color: rgba(#D4CCFF, .6);
+    @media (max-width: 700px) {
+      max-width: 140px;
+    }
+    @media (max-width: 560px) {
+      max-width: 100%;
+    }
+  }
+
+  &__socials {
+    @include flex-align-center(16);
+    justify-content: flex-end;
+    margin-left: auto;
+    max-width: 140px;
+    width: 100%;
+    @media (max-width: 560px) {
+      display: none;
+    }
+
+    &.desktop {
+      @media (max-width: 960px) {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: background-color .4s, border .4s, opacity .4s;
+
+    &.twitter {
+      background-color: $white;
+      border-color: $white;
+
+      &:focus {
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    &.discord {
+      background-color: #5865F2;
+      border-color: #5865f2;
+    }
+
+    &:hover {
+      opacity: .6;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: inherit;
+      opacity: 1;
+    }
+  }
+}
