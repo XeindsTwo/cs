@@ -10,13 +10,49 @@
     justify-content: space-between;
     gap: 30px;
     align-items: center;
+    position: relative;
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.06);
+    @media (max-width: 1360px) {
+      padding-left: 50px;
+    }
+    @media (max-width: 1300px) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media (max-width: 1160px) {
+      padding-left: 45px;
+      padding-right: 30px;
+    }
+    @media (max-width: 1100px) {
+      overflow: hidden;
+    }
+    @include r($lg) {
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+    @include r($sm) {
+      padding-left: 33px;
+      padding-right: 30px;
+      margin: 0 -5px;
+      border-radius: 24px;
+    }
+    @media (max-width: 420px) {
+      padding: 40px 26px 35px;
+    }
   }
 
   &__content {
     max-width: 615px;
     width: 100%;
+    @media (max-width: 1300px) {
+      max-width: 570px;
+    }
+    @media (max-width: 940px) {
+      position: relative;
+      max-width: 510px;
+      z-index: 5;
+    }
   }
 
   &__title {
@@ -26,6 +62,24 @@
     line-height: 1.25;
     font-family: $vela700;
     letter-spacing: -0.96px;
+    @media (max-width: 1300px) {
+      font-size: 44px;
+      line-height: 1.2;
+    }
+    @include r($lg) {
+      font-size: 40px;
+    }
+    @include r($tablet) {
+      max-width: 470px;
+      font-size: 36px;
+    }
+    @include r($sm) {
+      font-size: 32px;
+      max-width: 400px;
+    }
+    @include r($phone) {
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -33,6 +87,15 @@
     font-weight: 500;
     margin-bottom: 36px;
     color: rgba($white, .8);
+    @media (max-width: 1300px) {
+      font-size: 20px;
+    }
+    @include r($lg) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 17px;
+    }
   }
 
   &__subtext {
@@ -43,6 +106,19 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @media (max-width: 1220px) {
+      font-size: 22px;
+    }
+    @include r($lg) {
+      font-size: 20px;
+    }
+    @media (max-width: 560px) {
+      margin-bottom: 46px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+      max-width: 250px;
+    }
   }
 
   &__stats {
@@ -56,6 +132,9 @@
     padding: 20px;
     min-width: 130px;
     border-radius: 20px;
+    @media (max-width: 360px) {
+      padding: 19px 17px;
+    }
 
     &.orange {
       background-color: #1F0D08;
@@ -79,15 +158,62 @@
     font-weight: 500;
     letter-spacing: -0.96px;
     margin-bottom: 4px;
+    @media (max-width: 1220px) {
+      font-size: 40px;
+    }
+    @include r($lg) {
+      font-size: 36px;
+    }
+    @include r($sm) {
+      font-size: 30px;
+    }
+    @include r($phone) {
+      font-size: 26px;
+    }
   }
 
   &__description {
     font-weight: 500;
     font-size: 18px;
     color: rgba($white, .65);
+    @include r($phone) {
+      font-size: 17px;
+    }
   }
 
   &__img {
     @include objectCoverBg;
+    @media (max-width: 1350px) {
+      width: 520px;
+      height: auto;
+    }
+    @media (max-width: 1220px) {
+      width: 470px;
+    }
+    @media (max-width: 1160px) {
+      width: 450px;
+    }
+    @media (max-width: 1100px) {
+      margin-right: -105px;
+    }
+    @include r($lg) {
+      margin-right: -150px;
+    }
+    @media (max-width: 940px) {
+      opacity: .6;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    @media (max-width: 860px) {
+      width: 420px;
+    }
+    @include r($tablet) {
+      width: 380px;
+      opacity: .5;
+    }
+    @include r($sm) {
+      width: 340px;
+    }
   }
 }

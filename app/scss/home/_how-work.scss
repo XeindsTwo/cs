@@ -4,6 +4,9 @@
     @include r($phone) {
       margin-bottom: 36px;
     }
+    @media (max-width: 410px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__items {
