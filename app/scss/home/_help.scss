@@ -1,3 +1,44 @@
 .help {
+  &__title {
+    max-width: 670px;
+    margin: 0 auto 48px;
+  }
 
+  &__list {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding: 38px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: linear-gradient(178deg, #101010 5.87%, #151617 98.03%);
+
+    img {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.26;
+    color: $white;
+    letter-spacing: -0.56px;
+  }
+
+  &__text {
+    line-height: 1.45;
+    color: rgba($white, .8);
+
+    &.short {
+      max-width: 220px;
+    }
+  }
 }

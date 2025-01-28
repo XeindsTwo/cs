@@ -1,0 +1,86 @@
+.how-work {
+  &__title {
+    margin-bottom: 44px;
+  }
+
+  &__items {
+    display: grid;
+    grid-gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    border-radius: 30px;
+    padding-bottom: 42px;
+    background: #0D0D0D;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    &.long {
+      grid-column: span 2;
+    }
+  }
+
+  &__decor {
+    @include objectCoverBg;
+    width: 100%;
+    margin-bottom: 46px;
+    border-bottom: 1px solid rgba($white, .1);
+  }
+
+  &__step, &__name {
+    margin: 0 46px;
+  }
+
+  &__step {
+    font-size: 18px;
+    display: flex;
+    max-width: max-content;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #181818;
+    border: 1px solid #202020;
+    margin-bottom: 18px;
+  }
+
+  &__name {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: $vela700;
+    letter-spacing: -0.56px;
+  }
+
+  &__profit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    padding: 50px;
+    min-height: 310px;
+    background: linear-gradient(90deg, #8C39FF 0%, #FF3C00 100%);
+  }
+
+  &__subtitle {
+    font-size: 48px;
+    font-family: $vela700;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.26;
+  }
+
+  &__text {
+    max-width: 585px;
+    line-height: 1.55;
+    font-size: 22px;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

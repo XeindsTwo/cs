@@ -8,12 +8,12 @@
 }
 
 .body {
-  font-family: $geist;
+  font-family: $sfpro;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
-  color: #E5E5FF;
-  background-color: #050014;
+  color: $white;
+  background-color: #0A0A0A;
   position: relative;
   overflow-x: hidden;
   @include r($sm) {
@@ -41,14 +41,11 @@
 }
 
 .container {
-  max-width: 1120px;
-  padding: 0 16px;
+  max-width: 1365px;
+  padding: 0 15px;
   margin: 0 auto;
   width: 100%;
   position: relative;
-  @include r($phone) {
-    padding: 0 16px;
-  }
 }
 
 .main {
@@ -58,7 +55,7 @@
 }
 
 .indent {
-  margin-bottom: 120px;
+  margin-bottom: 155px;
   @include r($tablet) {
     margin-bottom: 100px;
   }

@@ -1,125 +1,96 @@
 .footer {
-  border-top: 2px solid rgba($white, .12);
-  border-top-style: outset;
-  background: linear-gradient(0deg, rgba(88, 101, 242, 0.05) 0%, rgba(0, 22, 255, 0.05) 100%), #050014;
-  padding: 22px 0 34px;
-  @include r($lg) {
-    padding: 26px 0;
-  }
-  @media (max-width: 700px) {
-    padding: 24px 0;
-  }
-  @media (max-width: 560px) {
-    padding: 26px 0 20px;
-  }
+  padding: 36px 0 50px;
+  background-color: #090909;
 
   &__inner {
-    @include flex-align-center(50);
-    @media (max-width: 560px) {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 36px;
-    }
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left, &__additional-links {
+    max-width: 210px;
+    width: 100%;
   }
 
   &__left {
-    @include flex-align-center(25);
-    margin: 0 auto;
-    @media (max-width: 960px) {
-      margin: 0;
-      flex-direction: row-reverse;
+
+  }
+
+  &__logo {
+    margin-bottom: 48px;
+  }
+
+  &__contacts {
+    @include flex-column(21);
+
+    &-item {
+      @include flex-column(5);
+      font-weight: 500;
     }
-    @media (max-width: 870px) {
-      gap: 19px;
+
+    &-link {
+      color: rgba($white, .65);
+      border: 1px solid transparent;
+      border-radius: 5px;
+      padding: 1px 2px;
+      max-width: max-content;
+      transition: color .4s, border .4s;
+
+      &:hover {
+        color: $accent;
+      }
+
+      &:focus {
+        color: $white;
+        border-color: $accent;
+      }
     }
-    @include r($sm) {
-      gap: 14px;
-    }
-    @media (max-width: 560px) {
-      flex-direction: column;
-    }
+  }
+
+  &__list {
+    @include flex-align-center(40);
   }
 
   &__link {
-    border-radius: 4px;
-    padding: 2px 3px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 1px 2px;
     font-weight: 500;
-    border: 1px solid transparent;
-    transition: color .4s, border .4s;
-    @media (max-width: 610px) {
-      font-size: 16px;
-    }
+    max-width: max-content;
+    transition: color .4s, border .4s, background-color .4s;
 
     &:hover {
-      color: #8d8dff;
+      color: $accent;
     }
 
     &:focus {
-      color: #8d8dff;
-      border-color: #8d8dff;
+      background-color: #8C39FF;
+      color: $white;
+      border-color: transparent;
     }
   }
 
-  &__copy {
-    color: rgba(#D4CCFF, .6);
-    @media (max-width: 700px) {
-      max-width: 140px;
-    }
-    @media (max-width: 560px) {
-      max-width: 100%;
-    }
+  &__additional-links {
+    @include flex-column(14);
+    align-items: flex-end;
   }
 
-  &__socials {
-    @include flex-align-center(16);
-    justify-content: flex-end;
-    margin-left: auto;
-    max-width: 140px;
-    width: 100%;
-    @media (max-width: 560px) {
-      display: none;
-    }
-
-    &.desktop {
-      @media (max-width: 960px) {
-        display: none;
-      }
-    }
-  }
-
-  &__social {
-    @include flex-center;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    overflow: hidden;
+  &__additional-link {
     border: 1px solid transparent;
-    transition: background-color .4s, border .4s, opacity .4s;
-
-    &.twitter {
-      background-color: $white;
-      border-color: $white;
-
-      &:focus {
-        svg path {
-          fill: $white;
-        }
-      }
-    }
-
-    &.discord {
-      background-color: #5865F2;
-      border-color: #5865f2;
-    }
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 1px 2px;
+    max-width: max-content;
+    transition: color .4s, border .4s, background-color .4s;
 
     &:hover {
-      opacity: .6;
+      color: $accent;
     }
 
     &:focus {
-      background-color: transparent;
-      border-color: inherit;
-      opacity: 1;
+      background-color: #8C39FF;
+      color: $white;
+      border-color: transparent;
     }
   }
 }
