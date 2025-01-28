@@ -77,6 +77,13 @@
   overflow: hidden;
 }
 
+.decor-bg {
+  @include objectCoverBg;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

@@ -24,6 +24,12 @@
     @include r($phone) {
       border-radius: 16px;
     }
+
+    &.open {
+      .faq__btn svg {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   &__head {
@@ -83,12 +89,8 @@
       border-radius: 10px;
     }
 
-    &:focus {
-
-    }
-
-    &.open {
-
+    svg {
+      transform: rotate(180deg);
     }
   }
 }
