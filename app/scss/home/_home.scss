@@ -1,3 +1,113 @@
 .home {
+  &__hashtag {
+    margin: 0 auto 42px;
+    padding: 10px 17px;
+    border-radius: 80px;
+    background-color: #1D1512;
+    color: #DAAFA8;
+    display: block;
+    font-weight: 500;
+    max-width: max-content;
+  }
 
+  &__title {
+    max-width: 1020px;
+    margin: 0 auto 42px;
+    font-size: 72px;
+    font-weight: 700;
+    font-family: $vela700;
+    text-align: center;
+
+    span {
+      color: #FFCAA4;
+    }
+  }
+
+  &__text {
+    color: rgba($white, .65);
+    font-weight: 400;
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto 64px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    justify-content: center;
+    margin-bottom: 135px;
+  }
+
+  &__link {
+    padding: 10px 25px;
+    background-color: $white;
+    border-radius: 100px;
+    color: #332828;
+    font-size: 16px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: $accent;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $white;
+      border-color: rgba($white, .5);
+    }
+  }
+
+  &__more {
+    @include flex-align-center(9);
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transform: translateY(1px);
+    color: rgba($white, .65);
+    transition: border .4s, color .4s, background-color .4s;
+
+    &:hover {
+      color: $accent;
+
+      svg {
+        transform: translateX(3px);
+
+        path {
+          stroke: $accent;
+        }
+      }
+    }
+
+    &:focus {
+      color: $white;
+      border-bottom-color: $white;
+
+      svg {
+        transform: translateX(0);
+
+        path {
+          stroke: rgba($white, .65);
+        }
+      }
+    }
+  }
+
+  &__trust {
+    margin-top: 60px;
+    margin-bottom: 34px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #808080;
+  }
+
+  &__logos {
+    margin-bottom: 60px;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

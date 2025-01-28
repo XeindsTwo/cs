@@ -15,26 +15,37 @@
 <header class="header" id="header">
   <div class="container">
     <div class="header__inner">
-      <img class="header__logo" src="images/logo.png" width="96" height="96" alt="logo">
+      <div class="header__logo">
+        <img src="images/logo.svg" width="86" height="37" alt="logo">
+      </div>
       <nav class="header__nav">
         <ul class="header__list">
           <li>
             <a class="header__link desktop" href="#home">
-              Home
+              Main
             </a>
           </li>
           <li>
             <a class="header__link desktop" href="#features">
-              Features
+              What we offer?
             </a>
           </li>
           <li>
             <a class="header__link desktop" href="#about">
-              About Us
+              Reviews
+            </a>
+          </li>
+          <li>
+            <a class="header__link desktop" href="#contacts">
+              Our contact
             </a>
           </li>
         </ul>
       </nav>
+      <div class="header__right">
+        <p class="header__text">Start trading with us</p>
+        <a class="header__btn desktop" href="#contacts">Get consultant</a>
+      </div>
     </div>
   </div>
 </header>
@@ -93,6 +104,7 @@
           <img src="images/logos/10.svg" alt="logo">
         </li>
       </ul>
+      <img class="home__line" src="images/home-line.svg" alt="line decor">
     </div>
   </div>
 </section>
@@ -306,15 +318,15 @@
         <ul class="contacts__items">
           <li class="contacts__item">
             <label class="label" for="name">Your name</label>
-            <input class="input" name="name" id="name" type="text" placeholder="Enter your name...">
+            <input class="input" name="name" id="name" type="text" placeholder="Enter your name..." required>
           </li>
           <li class="contacts__item">
             <label class="label" for="email">Your email</label>
-            <input class="input" name="email" id="email" type="email" placeholder="Enter your email...">
+            <input class="input" name="email" id="email" type="email" placeholder="Enter your email..." required>
           </li>
           <li class="contacts__item">
             <label class="label" for="message">Your message</label>
-            <textarea class="input input--textarea" name="message" id="message" placeholder="Enter your message..."></textarea>
+            <textarea class="input input--textarea" name="message" id="message" placeholder="Enter your message..." required></textarea>
           </li>
         </ul>
         <button class="contacts__btn" type="submit">
@@ -331,6 +343,22 @@
     <div class="footer__inner">
       <div class="footer__left">
         <img class="footer__logo" src="images/logo.svg" width="86" height="37" alt="logo">
+        <nav class="footer__nav mobile">
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link desktop" href="#main">Main</a>
+            </li>
+            <li>
+              <a class="footer__link desktop" href="#what_we_offer">What we offer?</a>
+            </li>
+            <li>
+              <a class="footer__link desktop" href="#reviews">Reviews</a>
+            </li>
+            <li>
+              <a class="footer__link desktop" href="#contacts">Our contact</a>
+            </li>
+          </ul>
+        </nav>
         <div class="footer__contacts">
           <div class="footer__contacts-item">
             <p class="footer__subtitle">Telephone number</p>

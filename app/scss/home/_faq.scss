@@ -1,6 +1,9 @@
 .faq {
   &__top-title {
     margin-bottom: 45px;
+    @include r($tablet) {
+      margin-bottom: 35px;
+    }
   }
 
   &__list {
@@ -82,12 +85,6 @@
     @include flex-center;
     width: 48px;
     height: 48px;
-
-    @include r($sm) {
-      padding: 14px 19px;
-      height: 40px;
-      border-radius: 10px;
-    }
 
     svg {
       transform: rotate(180deg);

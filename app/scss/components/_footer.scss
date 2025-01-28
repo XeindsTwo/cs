@@ -1,19 +1,39 @@
 .footer {
   padding: 36px 0 50px;
   background-color: #090909;
+  @include r($desktop) {
+    padding-bottom: 34px;
+  }
+  @include r($lg) {
+    padding: 30px 0;
+  }
+  @include r($sm) {
+    padding: 27px 0 23px;
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 890px) {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__left, &__additional-links {
     max-width: 210px;
     width: 100%;
-  }
-
-  &__left {
-
+    @include r($lg) {
+      max-width: 190px;
+    }
+    @media (max-width: 890px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
   }
 
   &__logo {
@@ -22,10 +42,19 @@
 
   &__contacts {
     @include flex-column(21);
+    @media (max-width: 890px) {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 26px 40px;
+    }
 
     &-item {
       @include flex-column(5);
       font-weight: 500;
+      @media (max-width: 890px) {
+        align-items: center;
+      }
     }
 
     &-link {
@@ -49,6 +78,14 @@
 
   &__list {
     @include flex-align-center(40);
+    @include r($lg) {
+      gap: 20px 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @include r($phone) {
+      gap: 18px 23px;
+    }
   }
 
   &__link {
@@ -58,6 +95,12 @@
     font-weight: 500;
     max-width: max-content;
     transition: color .4s, border .4s, background-color .4s;
+    @media (max-width: 890px) {
+      font-size: 18px;
+    }
+    @include r($sm) {
+      font-size: 17px;
+    }
 
     &:hover {
       color: $accent;
@@ -70,9 +113,26 @@
     }
   }
 
+  &__nav {
+    @media (max-width: 890px) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 890px) {
+        display: flex;
+        margin-bottom: 35px;
+      }
+    }
+  }
+
   &__additional-links {
     @include flex-column(14);
     align-items: flex-end;
+    @media (max-width: 890px) {
+      align-items: center;
+    }
   }
 
   &__additional-link {

@@ -1,5 +1,5 @@
 .header {
-  margin: 32px 0 40px;
+  margin: 23px 0 130px;
   @include r($lg) {
     margin: 24px 0 36px;
   }
@@ -12,27 +12,39 @@
 
   &__inner {
     @include flex-align-center(12);
-    justify-content: center;
+    justify-content: space-between;
     @media (max-width: 520px) {
       flex-direction: column;
     }
   }
 
+  &__logo, &__right {
+    max-width: 350px;
+    width: 100%;
+  }
+
   &__logo {
+    align-items: flex-start;
+
     img {
       @include objectCoverBg;
     }
   }
 
+  &__right {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
   &__list {
     @include flex-align-center(30);
     padding: 6px 24px;
-    border-radius: 32px;
-    border: 1px solid #B3B3FF;
-    background: #7373ec;
-    background-blend-mode: soft-light;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 51, 0.10);
-    backdrop-filter: blur(8px);
+    border-radius: 157px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(7.75px);
     @include r($sm) {
       gap: 23px;
     }
@@ -65,6 +77,32 @@
     &:focus {
       border-color: $white;
       color: $white;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+
+  &__btn {
+    padding: 10px 25px;
+    background-color: $white;
+    border-radius: 100px;
+    color: #332828;
+    font-size: 16px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: $accent;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $white;
+      border-color: rgba($white, .5);
     }
   }
 }
