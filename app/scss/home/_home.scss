@@ -1,4 +1,14 @@
 .home {
+  @include r($desktop) {
+    margin-bottom: 130px;
+  }
+  @media (max-width: 830px) {
+    margin-bottom: 110px;
+  }
+  @include r($sm) {
+    margin-bottom: 90px;
+  }
+
   &__hashtag {
     margin: 0 auto 42px;
     padding: 10px 17px;
@@ -8,15 +18,53 @@
     display: block;
     font-weight: 500;
     max-width: max-content;
+    @include r($sm) {
+      margin-bottom: 36px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
   }
 
   &__title {
     max-width: 1020px;
     margin: 0 auto 42px;
     font-size: 72px;
+    line-height: 1.26;
     font-weight: 700;
     font-family: $vela700;
     text-align: center;
+    @media (max-width: 1300px) {
+      font-size: 66px;
+    }
+    @include r($desktop) {
+      font-size: 62px;
+      max-width: 890px;
+    }
+    @include r($lg) {
+      font-size: 56px;
+    }
+    @media (max-width: 860px) {
+      font-size: 52px;
+    }
+    @include r($tablet) {
+      font-size: 46px;
+    }
+    @media (max-width: 670px) {
+      max-width: 510px;
+    }
+    @include r($sm) {
+      font-size: 42px;
+    }
+    @media (max-width: 530px) {
+      font-size: 40px;
+    }
+    @include r($phone) {
+      font-size: 38px;
+    }
+    @media (max-width: 400px) {
+      font-size: 36px;
+    }
 
     span {
       color: #FFCAA4;
@@ -29,6 +77,12 @@
     max-width: 650px;
     text-align: center;
     margin: 0 auto 64px;
+    @include r($lg) {
+      margin-bottom: 48px;
+    }
+    @include r($sm) {
+      max-width: 390px;
+    }
   }
 
   &__actions {
@@ -37,6 +91,21 @@
     gap: 23px;
     justify-content: center;
     margin-bottom: 135px;
+    @include r($desktop) {
+      margin-bottom: 115px;
+    }
+    @media (max-width: 1100px) {
+      margin-bottom: 100px;
+    }
+    @include r($tablet) {
+      margin-bottom: 80px;
+    }
+    @media (max-width: 700px) {
+      margin-bottom: 70px;
+    }
+    @include r($sm) {
+      margin-bottom: 60px;
+    }
   }
 
   &__link {
@@ -48,6 +117,9 @@
     border: 1px solid transparent;
     font-weight: 600;
     transition: background-color .4s, border .4s, color .4s;
+    @media (max-width: 375px) {
+      padding: 10px 22px;
+    }
 
     &:hover {
       background-color: $accent;
@@ -95,6 +167,11 @@
     }
   }
 
+  &__line {
+    @include objectCoverBg;
+    height: 2px;
+  }
+
   &__trust {
     margin-top: 60px;
     margin-bottom: 34px;
@@ -102,6 +179,12 @@
     font-size: 16px;
     font-weight: 500;
     color: #808080;
+    @media (max-width: 1300px) {
+      margin-top: 50px;
+    }
+    @include r($sm) {
+      margin-top: 40px;
+    }
   }
 
   &__logos {
@@ -109,5 +192,36 @@
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(5, 1fr);
+    @media (max-width: 1300px) {
+      margin-bottom: 50px;
+    }
+    @include r($lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include r($sm) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 540px) {
+      grid-gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      @include flex-center;
+      img {
+        @media (max-width: 860px) {
+          max-width: 80%;
+        }
+        @include r($tablet) {
+          max-width: 95%;
+        }
+        @media (max-width: 540px) {
+          max-width: 85%;
+        }
+      }
+    }
   }
 }

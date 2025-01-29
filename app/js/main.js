@@ -1,3 +1,9 @@
+import {submitForm} from "./submitForm.js";
+import {setupMobileMenu} from "./mobileMenu.js";
+
+submitForm();
+setupMobileMenu();
+
 document.querySelectorAll(".desktop").forEach(link => {
   link.addEventListener("click", function (event) {
     event.preventDefault();

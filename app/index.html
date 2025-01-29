@@ -26,12 +26,12 @@
             </a>
           </li>
           <li>
-            <a class="header__link desktop" href="#features">
+            <a class="header__link desktop" href="#help">
               What we offer?
             </a>
           </li>
           <li>
-            <a class="header__link desktop" href="#about">
+            <a class="header__link desktop" href="#cases">
               Reviews
             </a>
           </li>
@@ -45,10 +45,32 @@
       <div class="header__right">
         <p class="header__text">Start trading with us</p>
         <a class="header__btn desktop" href="#contacts">Get consultant</a>
+        <button class="menu-btn menu-btn--header" type="button">
+          <span class="menu-btn__line"></span>
+          <span class="sr-only">Interact with menu</span>
+        </button>
       </div>
     </div>
   </div>
 </header>
+<div class="header__mobile">
+  <nav class="header__nav mobile">
+    <ul class="header__list">
+      <li>
+        <a class="header__link mobile" href="#home" tabindex="-1">Main</a>
+      </li>
+      <li>
+        <a class="header__link mobile" href="#help" tabindex="-1">What we offer?</a>
+      </li>
+      <li>
+        <a class="header__link mobile" href="#reviews" tabindex="-1">Reviews</a>
+      </li>
+      <li>
+        <a class="header__link mobile" href="#contacts" tabindex="-1">Our contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 <img class="decor-bg" src="images/home.png" alt="decor background">
 <main class="main">
   <section class="home indent" id="home">
@@ -401,5 +423,15 @@
     </div>
   </div>
 </footer>
+<div class="modal" id="modal-success">
+  <h3 class="modal__title">
+    <span id="modal-name"></span>, thank you for reaching out!
+  </h3>
+  <p class="modal__subtext">
+    We have received your message and you will be contacted shortly. If you cannot answer the phone, we will
+    contact you by e-mail at <span id="modal-email"></span>
+  </p>
+  <button class="modal__btn btn" type="button">Close window</button>
+</div>
 <script src="js/faq.js"></script>
 <script src="js/main.min.js" type="module"></script>

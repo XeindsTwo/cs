@@ -1,0 +1,90 @@
+.modal {
+  @include topLeft50;
+  position: fixed;
+  max-width: 460px;
+  max-height: 90vh;
+  width: 96%;
+  padding: 40px 24px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 80;
+  border-radius: 16px;
+  background: #1e132c;
+  transform: translate(-50%, -25%);
+  transition: transform .45s ease-in-out, visibility .4s, opacity .4s;
+  @media (max-width: 800px) {
+    padding-top: 30px;
+  }
+  @media (max-width: 560px) {
+    max-width: 410px;
+  }
+  @media (max-width: 415px) {
+    width: 95%;
+    padding: 35px 20px 26px;
+  }
+  @media (max-height: 680px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__title {
+    line-height: 1.2;
+    font-weight: 400;
+    font-size: 28px;
+    color: $white;
+    margin-bottom: 24px;
+    @media (max-width: 610px) {
+      font-size: 26px;
+    }
+    @include r($phone) {
+      font-size: 24px;
+    }
+  }
+
+  &__subtext {
+    color: rgba($white, .6);
+    font-size: 16px;
+    margin-bottom: 32px;
+    @media (max-width: 520px) {
+      font-size: 15px;
+    }
+  }
+
+  &__btn {padding: 10px 25px;
+    background-color: $white;
+    border-radius: 100px;
+    color: #332828;
+    font-size: 16px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    transition: background-color .4s, border .4s, color .4s;
+    @media (max-width: 375px) {
+      padding: 10px 22px;
+    }
+
+    &:hover {
+      background-color: $accent;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $white;
+      border-color: rgba($white, .5);
+    }
+
+    @media (max-width: 520px) {
+      font-size: 15px;
+    }
+  }
+}

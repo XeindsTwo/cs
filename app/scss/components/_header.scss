@@ -1,7 +1,13 @@
 .header {
   margin: 23px 0 130px;
+  @media (max-width: 1300px) {
+    margin-bottom: 110px;
+  }
+  @media (max-width: 1150px) {
+    margin-bottom: 80px;
+  }
   @include r($lg) {
-    margin: 24px 0 36px;
+    margin: 24px 0 70px;
   }
   @include r($tablet) {
     margin: 20px 0 44px;
@@ -21,6 +27,12 @@
   &__logo, &__right {
     max-width: 350px;
     width: 100%;
+    @media (max-width: 1260px) {
+      max-width: 200px;
+    }
+    @media (max-width: 940px) {
+      max-width: max-content;
+    }
   }
 
   &__logo {
@@ -38,6 +50,25 @@
     justify-content: flex-end;
   }
 
+  &__nav {
+    @media (max-width: 940px) {
+      margin-left: auto;
+    }
+    @media (max-width: 700px) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 700px) {
+        display: block;
+      }
+      @include r($phone) {
+        margin-left: 0;
+      }
+    }
+  }
+
   &__list {
     @include flex-align-center(30);
     padding: 6px 24px;
@@ -45,6 +76,9 @@
     border: 1px solid rgba(255, 255, 255, 0.02);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(7.75px);
+    @include r($lg) {
+      gap: 26px;
+    }
     @include r($sm) {
       gap: 23px;
     }
@@ -82,6 +116,9 @@
 
   &__text {
     font-weight: 600;
+    @media (max-width: 1260px) {
+      display: none;
+    }
   }
 
   &__btn {
@@ -93,6 +130,9 @@
     border: 1px solid transparent;
     font-weight: 600;
     transition: background-color .4s, border .4s, color .4s;
+    @media (max-width: 940px) {
+      display: none;
+    }
 
     &:hover {
       background-color: $accent;
@@ -103,6 +143,33 @@
       background-color: transparent;
       color: $white;
       border-color: rgba($white, .5);
+    }
+  }
+
+  &__mobile {
+    @include flex-column(30);
+    padding: 120px 15px 30px;
+    display: none;
+    pointer-events: none;
+    user-select: none;
+    position: fixed;
+    z-index: 25;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0A0F1A;
+    transform: translateX(100%);
+    height: 100vh;
+    transition: transform .7s ease-in-out;
+    @media (max-width: 940px) {
+      display: flex;
+      align-items: flex-start;
+      pointer-events: auto;
+      user-select: auto;
+    }
+
+    &.active {
+      transform: translateX(0);
     }
   }
 }
