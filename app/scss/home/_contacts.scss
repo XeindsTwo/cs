@@ -1,4 +1,5 @@
 .contacts {
+  position: relative;
   margin-bottom: 106px;
   @include r($desktop) {
     margin-bottom: 80px;
@@ -171,7 +172,7 @@
 
   &__circle {
     position: absolute;
-    bottom: -10%;
+    bottom: -40%;
     left: 50%;
     transform: translateX(-50%);
     width: 1070px;

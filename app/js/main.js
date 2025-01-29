@@ -1,7 +1,5 @@
-import {submitForm} from "./submitForm.js";
 import {setupMobileMenu} from "./mobileMenu.js";
 
-submitForm();
 setupMobileMenu();
 
 document.querySelectorAll(".desktop").forEach(link => {
@@ -28,13 +26,15 @@ document.querySelectorAll(".desktop").forEach(link => {
   });
 });
 
-new Swiper('.swiper', {
-  slidesPerView: 1,
-  slidesPerGroup: 1,
+const swiper = new Swiper('.swiper', {
   spaceBetween: 30,
-  speed: 800,
   navigation: {
+    nextEl: '.cases__btn--next',
     prevEl: '.cases__btn--prev',
-    nextEl: '.cases__btn--next'
+  },
+  on: {
+    slideChange: function () {
+      document.querySelector('.cases__number').textContent = `Case #${this.realIndex + 1}`;
+    }
   }
 });

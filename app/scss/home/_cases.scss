@@ -1,6 +1,23 @@
 .cases {
   &__title {
     margin-bottom: 44px;
+    @media (max-width: 660px) {
+      max-width: 400px;
+      margin: 0 auto 34px;
+    }
+    @include r($sm) {
+      max-width: 350px;
+    }
+    @media (max-width: 510px) {
+      max-width: 320px;
+    }
+    @include r($phone) {
+      max-width: 300px;
+    }
+    @media (max-width: 380px) {
+      max-width: 280px;
+      margin-bottom: 28px;
+    }
   }
 
   &__wrapper {
@@ -16,6 +33,12 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 15;
+    @include r($tablet) {
+      top: 24px;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 
   &__number {
@@ -36,6 +59,12 @@
         stroke: $accent;
       }
     }
+
+    &.swiper-button-disabled {
+      opacity: .5;
+      pointer-events: none;
+      user-select: none;
+    }
   }
 
   &__card {
@@ -45,7 +74,21 @@
     padding-bottom: 45px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba($white, .1);
     position: relative;
+    @media (max-width: 880px) {
+      padding-bottom: 35px;
+    }
+    @media (max-width: 660px) {
+      grid-gap: 44px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: 530px) {
+      border-radius: 24px;
+    }
+    @include r($phone) {
+      padding-bottom: 27px;
+    }
 
     &::before {
       @include pseudo;
@@ -54,6 +97,16 @@
       width: 1px;
       background: #222222;
       transform: translateX(-50%);
+      @media (max-width: 660px) {
+        left: auto;
+        top: 52%;
+        height: 1px;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+      @include r($phone) {
+        top: 53%;
+      }
     }
   }
 
@@ -68,11 +121,90 @@
     font-size: 42px;
     position: relative;
     font-weight: 600;
+    @include r($desktop) {
+      font-size: 38px;
+    }
+    @include r($lg) {
+      font-size: 34px;
+    }
+    @media (max-width: 830px) {
+      font-size: 30px;
+    }
+    @include r($tablet) {
+      font-size: 28px;
+    }
 
     span {
       font-size: 112px;
       color: rgba($white, .1);
       margin-bottom: -58px;
+      @include r($desktop) {
+        font-size: 104px;
+      }
+      @include r($lg) {
+        font-size: 92px;
+        margin-bottom: -46px;
+      }
+      @media (max-width: 880px) {
+        font-size: 84px;
+      }
+      @media (max-width: 830px) {
+        font-size: 76px;
+      }
+      @include r($tablet) {
+        font-size: 70px;
+        margin-bottom: -33px;
+      }
+      @media (max-width: 500px) {
+        font-size: 62px;
+        margin-bottom: -27px;
+      }
+      @include r($phone) {
+        font-size: 56px;
+      }
+      @media (max-width: 400px) {
+        font-size: 50px;
+      }
+    }
+  }
+
+  &__img {
+    margin-top: 60px;
+    @include r($desktop) {
+      margin-top: 50px;
+      width: 410px;
+      height: auto;
+    }
+    @include r($lg) {
+      width: 370px;
+      margin-top: 40px;
+      margin-bottom: -20px;
+    }
+    @media (max-width: 830px) {
+      width: 330px;
+      margin-bottom: -25px;
+    }
+    @include r($tablet) {
+      width: 300px;
+    }
+    @media (max-width: 710px) {
+      width: 270px;
+    }
+    @include r($phone) {
+      width: 250px;
+    }
+    @media (max-width: 400px) {
+      width: 240px;
+      margin-top: 50px;
+    }
+    @media (max-width: 380px) {
+      width: 230px;
+    }
+
+    &--after {
+      @media (max-width: 660px) {
+        margin-top: -14px;
+      }
     }
   }
 }
