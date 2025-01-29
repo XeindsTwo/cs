@@ -27,3 +27,14 @@ document.querySelectorAll(".desktop").forEach(link => {
     }
   });
 });
+
+new Swiper('.swiper', {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 30,
+  speed: 800,
+  navigation: {
+    prevEl: '.cases__btn--prev',
+    nextEl: '.cases__btn--next'
+  }
+});

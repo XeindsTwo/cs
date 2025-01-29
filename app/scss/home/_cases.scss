@@ -1,0 +1,78 @@
+.cases {
+  &__title {
+    margin-bottom: 44px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__control {
+    @include flex-align-center(25);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
+
+  &__number {
+    padding: 6px 30px;
+    border-radius: 10px;
+    border: 1px solid #202020;
+    background: #181818;
+  }
+
+  &__btn {
+    @include flex-center;
+    width: 28px;
+    height: 28px;
+
+    &:hover {
+      svg path {
+        stroke-opacity: 1;
+        stroke: $accent;
+      }
+    }
+  }
+
+  &__card {
+    border-radius: 30px;
+    background: #0D0D0D;
+    cursor: pointer;
+    padding-bottom: 45px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      left: 50%;
+      height: 100%;
+      width: 1px;
+      background: #222222;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__side {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &__name {
+    @include flex-column(0);
+    align-items: center;
+    font-size: 42px;
+    position: relative;
+    font-weight: 600;
+
+    span {
+      font-size: 112px;
+      color: rgba($white, .1);
+      margin-bottom: -58px;
+    }
+  }
+}
